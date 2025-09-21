@@ -9,20 +9,21 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# LaTeX
+# LaTeX aux
 *.aux
 *.log
 *.out
 *.toc
 *.lof
 *.lot
-*.gz
 *.bbl
 *.blg
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-*.pdf
+
+# Ignore PDFs only inside book (رسمی‌ها در pdfs نگه داشته میشن)
+book/*.pdf
 
 # OS files
 .DS_Store
