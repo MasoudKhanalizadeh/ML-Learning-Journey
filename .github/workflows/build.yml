@@ -8,6 +8,9 @@ on:
       - '.github/workflows/build.yml'
   workflow_dispatch:
 
+permissions:
+  contents: write  # اجازه‌ی commit/push با GITHUB_TOKEN
+
 jobs:
   build-en:
     runs-on: ubuntu-latest
@@ -22,6 +25,7 @@ jobs:
       - name: Build English PDF
         working-directory: ./book
         run: |
+          mkdir -p ../pdfs/en
           latexmk -pdf -interaction=nonstopmode -outdir=../pdfs/en main_en.tex
           ls -lah ../pdfs/en
 
@@ -30,3 +34,17 @@ jobs:
         with:
           name: ML-Journey-EN
           path: pdfs/en/*.pdf
+          if-no-files-found: error
+
+      - name: Commit PDF into repo (pdfs/en)
+        run: |
+          if [ -n "$(ls -A pdfs/en/*.pdf 2>/dev/null)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add pdfs/en/*.pdf
+            # اگر فایل قبلی هست، commit ممکنه چیزی برای اضافه‌کردن نداشته باشه — اشکال ندارد
+            git commit -m "CI: update English PDF" || echo "No changes to commit"
+            git push
+          else
+            echo "No PDF found to commit" && exit 1
+          fi
