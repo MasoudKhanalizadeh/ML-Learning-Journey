@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/cover.png" alt="ML Journey Cover" width="640"/>
+  <img src="book/assets/ML_Learning_Journey.png" alt="ML Journey Logo" width="480"/>
 </p>
 
 # 📘 Machine Learning Journey
@@ -17,9 +17,9 @@ With a clear roadmap, 2h/day routine, and organized repo structure, you can:
 
 ## ✨ Features
 
-- **Structured learning path** → follow a week-by-week roadmap (2h/day)  
-- **Theory + Practice together** → no need for separate notes; notebooks & reports are connected  
-- **Forkable & Reusable** → anyone can fork and start learning with the same structure  
+- **Structured learning path** → follow a phase-by-phase roadmap (2h/day)  
+- **Theory + Practice together** → notebooks and reports stay connected  
+- **Forkable & Reusable** → anyone can fork and start learning with this template  
 - **LaTeX reports (optional)** → generate clean summaries if you want academic-style notes  
 - **Automatic builds** → GitHub Actions builds PDFs for you  
 - **Future-ready** → extend to bilingual docs or website if needed  
@@ -35,20 +35,32 @@ ML-Learning-Journey/
 ├── LICENSE-docs        # CC BY-NC-SA license for docs
 ├── README.md           # this file
 ├── CHANGELOG.md        # project history
+├── ROADMAP.md          # detailed learning roadmap
+│
+├── .github/workflows/  # GitHub Actions for CI
 │
 ├── book/               # (optional) LaTeX notes and reports
+│   ├── assets/         # logos, covers, images
+│   ├── config/         # colors, commands, metadata
+│   ├── parts/          # shallow + deep chapters
+│   ├── shared/         # code, diagrams, figures, tables
+│   ├── templates/      # tex chapter templates
 │   ├── main_en.tex
-│   ├── config/
-│   └── parts/
+│   └── main_fa.tex
 │
 ├── notebooks/          # Jupyter notebooks (main learning path)
-│   ├── week1/
-│   └── data/
+│   ├── data/           # datasets
+│   └── Phase1/         # phase-based learning
+│       └── day1_numpy.ipynb
 │
-├── pdfs/               # official PDF builds (if enabled)
+├── pdfs/               # official PDF builds
+│   ├── en/main_en.pdf
+│   └── fa/
 │
-├── site/               # reserved for future website
-└── scripts/            # helper scripts (build, new-week, etc.)
+├── scripts/            # helper scripts
+│   └── build-pdf.ps1
+│
+└── site/               # reserved for future website
 ```
 
 ---
@@ -57,8 +69,8 @@ ML-Learning-Journey/
 
 1. **Fork this repo** into your own GitHub  
 2. Follow the [ROADMAP.md](./ROADMAP.md) step by step (2h/day suggested)  
-3. Work inside `notebooks/` for practice  
-4. (Optional) Write weekly reports in `book/` → auto-build to PDF  
+3. Work inside `notebooks/` for practice (phase by phase)  
+4. (Optional) Write weekly/phase reports in `book/` → auto-build to PDF  
 5. Track your progress in `CHANGELOG.md` or a separate `PROGRESS.md`  
 
 ---
@@ -66,7 +78,7 @@ ML-Learning-Journey/
 ## 📌 Roadmap
 
 - [x] Setup initial repository structure  
-- [x] Add licenses and README  
+- [x] Add licenses, README, and logo  
 - [ ] Phase 1: NumPy & Pandas basics  
 - [ ] Phase 2: Classical ML algorithms  
 - [ ] Phase 3: Deep Learning fundamentals  
