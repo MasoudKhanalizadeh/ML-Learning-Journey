@@ -1,1 +1,50 @@
+% book/preamble.tex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}          % crisp Latin fonts
+\usepackage{microtype}        % better kerning
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{setspace}
+\onehalfspacing
 
+% Configs
+\input{config/metadata}
+\input{config/colors}
+\input{config/commands}
+
+% Titles/ToC
+\usepackage{titlesec}
+\usepackage{tocloft}
+\renewcommand{\cftbeforechapskip}{8pt}
+\renewcommand{\cftchapdotsep}{2}
+\setcounter{tocdepth}{2}
+
+% Listings (code) – dark background
+\usepackage{listings}
+\lstdefinestyle{DarkCode}{
+  backgroundcolor=\color{CodeBG},
+  basicstyle=\ttfamily\small\color{CodeFG},
+  frame=single,
+  framerule=0.3pt,
+  rulecolor=\color{CodeFrame},
+  numbers=left,
+  numberstyle=\tiny\color{CodeNumber},
+  numbersep=8pt,
+  showstringspaces=false,
+  breaklines=true,
+  keywordstyle=\bfseries\color{CodeKeyword},
+  commentstyle=\itshape\color{CodeComment},
+  stringstyle=\color{CodeString},
+  tabsize=2
+}
+\lstset{style=DarkCode, language=Python}
+
+% Minimal header/footer (پیشرفته‌اش را در گام بعد می‌سازیم)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}

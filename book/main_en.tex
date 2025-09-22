@@ -1,1 +1,33 @@
+\documentclass[12pt,a4paper]{book}
+\input{preamble}
+
+\begin{document}
+
+\frontmatter
+\begin{titlepage}
+  \centering
+  {\Huge \textbf{\BookTitle}\par}
+  \vspace{6pt}
+  {\Large \BookSubtitle\par}
+  \vspace{18pt}
+  {\Large \BookAuthor\par}
+  \vfill
+  {\small Version \BookVersion \quad|\quad \RepoLink \par}
+\end{titlepage}
+
+\tableofcontents
+\mainmatter
+
+\part{Foundations}
+\chapter{Python, NumPy, and Data Handling}
+
+This is a minimal build demo. Below is a code block with dark background:
+
+\begin{lstlisting}
+import numpy as np
+a = np.array([1, 2, 3, 4, 5])
+print(a.shape, a.dtype)
+\end{lstlisting}
+
+\end{document}
 
