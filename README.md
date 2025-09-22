@@ -79,13 +79,14 @@ Whenever you `git push`, GitHub automatically builds the PDF and makes it availa
 
 - [x] Setup initial repository structure  
 - [x] Add licenses and README  
-- [ ] Week 1: NumPy & Pandas  
-- [ ] Week 2: Classical ML algorithms  
-- [ ] Week 3: Deep Learning basics  
-- [ ] Part IV: MLOps + Research practices  
+- [ ] Phase 1: NumPy & Pandas  
+- [ ] Phase 2: Classical ML algorithms  
+- [ ] Phase 3: Deep Learning basics  
+- [ ] Phase 4: MLOps + Research practices  
 - [ ] Build bilingual (English + Persian) versions  
 - [ ] Publish as a website  
-
+ 
+- You can see detailed roadmap here: [ROADMAP.md](https://github.com/MasoudKhanalizadeh/ML-Learning-Journey/blob/main/ROADMAP.md)
 ---
 
 ## 📜 Licenses
