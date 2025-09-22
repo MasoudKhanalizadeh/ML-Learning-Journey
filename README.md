@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="book/assets/ML_Learning_Journey.png" alt="ML Journey Logo" width="480"/>
+  <img src="book/assets/ML_Learning_Journey.png" alt="ML Journey Logo" width="200"/>
 </p>
 
 # 📘 Machine Learning Journey
