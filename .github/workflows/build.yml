@@ -1,1 +1,32 @@
-% GitHub Actions workflow
+name: Build PDFs
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'book/**'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+jobs:
+  build-en:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX Live (EN)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+
+      - name: Build English PDF
+        working-directory: ./book
+        run: |
+          latexmk -pdf -interaction=nonstopmode -outdir=../pdfs/en main_en.tex
+          ls -lah ../pdfs/en
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ML-Journey-EN
+          path: pdfs/en/*.pdf
