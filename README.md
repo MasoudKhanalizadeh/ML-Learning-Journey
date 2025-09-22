@@ -4,23 +4,25 @@
 
 # 📘 Machine Learning Journey
 
-**Machine Learning Journey** is both:
-- a **personal learning path** (daily 2h practice → notes + coding), and  
-- a **book project** (shallow explanations + deep dives, publishable as PDF and later as a website).  
+**Machine Learning Journey** is a **structured learning framework** for anyone who wants to finally start Machine Learning without confusion.  
+It combines **theory + practice** in one place, so you don’t need scattered notes or separate projects.  
 
-From fundamentals to advanced research, with **code**, **notebooks**, and **academic reports**.
+With a clear roadmap, 2h/day routine, and organized repo structure, you can:  
+- Learn ML concepts step by step  
+- Practice directly in Jupyter notebooks  
+- Keep everything tracked and easy to review later  
+- Gradually build your own personal ML playbook  
 
 ---
 
 ## ✨ Features
 
-- **Two-layer content:**  
-  - *Shallow* → concise but complete overview  
-  - *Deep* → detailed technical deep dive with references  
-- **Linked coding practice:** Jupyter notebooks connected to each chapter  
-- **LaTeX book system:** clean structure, multilingual-ready (English, Persian)  
-- **Automatic builds:** via `latexmk` locally and GitHub Actions in CI/CD  
-- **Future website integration:** book can be published as a static site  
+- **Structured learning path** → follow a week-by-week roadmap (2h/day)  
+- **Theory + Practice together** → no need for separate notes; notebooks & reports are connected  
+- **Forkable & Reusable** → anyone can fork and start learning with the same structure  
+- **LaTeX reports (optional)** → generate clean summaries if you want academic-style notes  
+- **Automatic builds** → GitHub Actions builds PDFs for you  
+- **Future-ready** → extend to bilingual docs or website if needed  
 
 ---
 
@@ -30,48 +32,34 @@ From fundamentals to advanced research, with **code**, **notebooks**, and **acad
 ML-Learning-Journey/
 │
 ├── LICENSE             # MIT license for code
-├── LICENSE-docs        # CC BY-NC-SA license for book/docs
+├── LICENSE-docs        # CC BY-NC-SA license for docs
 ├── README.md           # this file
 ├── CHANGELOG.md        # project history
 │
-├── book/               # LaTeX source of the book
-│   ├── main_en.tex     # main entry (English)
-│   ├── main_fa.tex     # reserved for Farsi (future)
-│   ├── config/         # metadata, colors, commands
-│   ├── i18n/           # strings for multilingual support
-│   ├── frontmatter/    # title page, publisher info
-│   ├── parts/          # chapters (shallow + deep)
-│   ├── references/     # refs.bib for citations
-│   ├── glossary/       # abbreviations, glossary
-│   ├── index/          # keywords for index
-│   ├── templates/      # shallow/deep chapter templates
-│   └── shared/         # figures, code snippets, diagrams, tables
+├── book/               # (optional) LaTeX notes and reports
+│   ├── main_en.tex
+│   ├── config/
+│   └── parts/
 │
-├── notebooks/          # Jupyter notebooks for practice
+├── notebooks/          # Jupyter notebooks (main learning path)
 │   ├── week1/
 │   └── data/
 │
-├── pdfs/               # official build outputs (PDFs)
-│   ├── en/
-│   └── fa/
+├── pdfs/               # official PDF builds (if enabled)
 │
-├── site/               # reserved for future website build
-└── scripts/            # build scripts (local + CI)
+├── site/               # reserved for future website
+└── scripts/            # helper scripts (build, new-week, etc.)
 ```
 
 ---
 
-## 🛠️ Build Instructions
+## 🛠️ How to Use
 
-### Local Build (Windows PowerShell)
-```powershell
-cd book
-latexmk -pdf -outdir=../pdfs/en main_en.tex
-```
-Output: `pdfs/en/ML-Journey-v0.1.pdf`
-
-### GitHub Actions (CI/CD)
-Whenever you `git push`, GitHub automatically builds the PDF and makes it available as an artifact.
+1. **Fork this repo** into your own GitHub  
+2. Follow the [ROADMAP.md](./ROADMAP.md) step by step (2h/day suggested)  
+3. Work inside `notebooks/` for practice  
+4. (Optional) Write weekly reports in `book/` → auto-build to PDF  
+5. Track your progress in `CHANGELOG.md` or a separate `PROGRESS.md`  
 
 ---
 
@@ -79,20 +67,21 @@ Whenever you `git push`, GitHub automatically builds the PDF and makes it availa
 
 - [x] Setup initial repository structure  
 - [x] Add licenses and README  
-- [ ] Phase 1: NumPy & Pandas  
+- [ ] Phase 1: NumPy & Pandas basics  
 - [ ] Phase 2: Classical ML algorithms  
-- [ ] Phase 3: Deep Learning basics  
+- [ ] Phase 3: Deep Learning fundamentals  
 - [ ] Phase 4: MLOps + Research practices  
 - [ ] Build bilingual (English + Persian) versions  
 - [ ] Publish as a website  
- 
-- You can see detailed roadmap here: [ROADMAP.md](https://github.com/MasoudKhanalizadeh/ML-Learning-Journey/blob/main/ROADMAP.md)
+
+👉 See detailed roadmap here: [ROADMAP.md](./ROADMAP.md)
+
 ---
 
 ## 📜 Licenses
 
 - **Code** → [MIT License](./LICENSE)  
-- **Documentation/Book** → [CC BY-NC-SA 4.0](./LICENSE-docs)  
+- **Documentation/Reports** → [CC BY-NC-SA 4.0](./LICENSE-docs)  
 
 ---
 
@@ -103,13 +92,13 @@ Whenever you `git push`, GitHub automatically builds the PDF and makes it availa
 
 ---
 
-## 🪙Support This Project
+## 🪙 Support This Project
 
-If you find **Machine Learning Journey** useful, please consider supporting its development:
+If you find **Machine Learning Journey** useful, you can support by:
 
-- ⭐ Star this repository on GitHub  
-- 🐦 Share it with your network  
-- ☕ Iran: [coffeete.ir/masoud.khanalizadehimani](http://www.coffeete.ir/masoud.khanalizadehimani)  
+- ⭐ Starring this repository on GitHub  
+- 🐦 Sharing it with your network  
+- ☕ For Iran: [coffeete.ir/masoud.khanalizadehimani](http://www.coffeete.ir/masoud.khanalizadehimani)  
 - ☕ International: [buymeacoffee.com/masoudkhanalizadeh](https://buymeacoffee.com/masoudkhanalizadeh)  
 
-Your support helps me continue building this journey and expand it into a book + website.  
+Your support motivates me to keep improving this framework and eventually release a polished ML playbook for free.  
