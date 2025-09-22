@@ -102,13 +102,13 @@ Whenever you `git push`, GitHub automatically builds the PDF and makes it availa
 
 ---
 
-## ❤️ Support This Project
+##  Support This Project
 
 If you find **Machine Learning Journey** useful, please consider supporting its development:
 
 - ⭐ Star this repository on GitHub  
 - 🐦 Share it with your network  
-- ☕ For Iran: [coffeete.ir/masoud.khanalizadehimani](http://www.coffeete.ir/masoud.khanalizadehimani)  
+- ☕ Iran: [coffeete.ir/masoud.khanalizadehimani](http://www.coffeete.ir/masoud.khanalizadehimani)  
 - ☕ International: [buymeacoffee.com/masoudkhanalizadeh](https://buymeacoffee.com/masoudkhanalizadeh)  
 
 Your support helps me continue building this journey and expand it into a book + website.  
