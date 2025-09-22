@@ -102,7 +102,7 @@ Whenever you `git push`, GitHub automatically builds the PDF and makes it availa
 
 ---
 
-##  Support This Project
+## 🪙Support This Project
 
 If you find **Machine Learning Journey** useful, please consider supporting its development:
 
