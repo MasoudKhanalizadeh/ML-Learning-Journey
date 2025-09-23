@@ -1,1 +1,137 @@
-% shallow content for NumPy chapter
+
+\chapter{NumPy Basics}
+
+\section*{Goals}
+\begin{itemize}
+  \item Understand NumPy arrays, dtypes, and shapes
+  \item Indexing \& slicing (1D/2D)
+  \item Reshape, view vs copy
+  \item Broadcasting
+  \item Vectorization vs loops
+  \item Descriptive statistics \& linear algebra
+  \item Random numbers with reproducibility
+  \item Mini CSV task
+\end{itemize}
+
+\section{Environment \& Version}
+Always check library version for reproducibility.
+\begin{lstlisting}[language=Python]
+import numpy as np
+print("NumPy version:", np.__version__)
+\end{lstlisting}
+
+\section{Arrays, dtypes, and shapes}
+Arrays are the core structure in NumPy. They are contiguous in memory and efficient.
+
+\begin{lstlisting}[language=Python]
+a = np.array([1,2,3,4,5])
+print("a:", a, "| shape:", a.shape, "| ndim:", a.ndim, "| dtype:", a.dtype)
+
+b = np.array([[1,2,3],[4,5,6]])
+print("b:\n", b, "\nshape:", b.shape, "| ndim:", b.ndim, "| dtype:", b.dtype)
+
+zeros = np.zeros((2,3))
+ones = np.ones((2,3))
+rng = np.arange(0,10,2)
+lin = np.linspace(0,1,5)
+\end{lstlisting}
+
+\section{Indexing \& Slicing}
+Indexing extracts elements. In 2D arrays: [row, column].
+\begin{lstlisting}[language=Python]
+c = np.arange(10)
+print("c:", c)
+print("c[2:7]:", c[2:7])
+print("b[0,1]:", b[0,1])
+print("b[:,1]:", b[:,1])
+\end{lstlisting}
+
+\section{Reshape, Views, and Copies}
+Reshape changes view. Copy creates independence.
+\begin{lstlisting}[language=Python]
+d = np.arange(12)
+m = d.reshape(3,4)
+m[0,0] = 999
+print("d[0]:", d[0])
+
+m_copy = m.copy()
+m_copy[0,0] = -1
+\end{lstlisting}
+
+\section{Broadcasting}
+Broadcasting expands smaller arrays automatically.
+\begin{lstlisting}[language=Python]
+X = np.ones((3,3))
+v = np.array([1,2,3])
+print(X + v)
+
+A = np.arange(6).reshape(2,3)
+B = np.arange(2).reshape(2,1)
+print(A + B)
+\end{lstlisting}
+
+\section{Vectorization vs Loops}
+Vectorization uses C-level speed. Loops are slow.
+\begin{lstlisting}[language=Python]
+x = np.arange(100_000)
+y_vec = x*x + 2*x + 1
+
+def poly_slow(xx):
+    out = []
+    for t in xx:
+        out.append(t*t + 2*t + 1)
+    return np.array(out)
+
+y_slow = poly_slow(x)
+\end{lstlisting}
+
+\section{Descriptive Statistics}
+\begin{lstlisting}[language=Python]
+arr = np.array([3,7,2,9,5,10,4])
+print("mean:", arr.mean(), "| std:", arr.std())
+print("percentiles:", np.percentile(arr, [25,50,75]))
+\end{lstlisting}
+
+\section{Linear Algebra}
+\begin{lstlisting}[language=Python]
+M = np.array([[2,0],[0,3]])
+v = np.array([5,1])
+print("M @ v =", M @ v)
+print("det(M) =", np.linalg.det(M))
+print("inv(M) =", np.linalg.inv(M))
+\end{lstlisting}
+
+\section{Random Numbers}
+\begin{lstlisting}[language=Python]
+rng = np.random.default_rng(seed=42)
+print(rng.normal(0,1,5))
+print(rng.integers(0,10,5))
+\end{lstlisting}
+
+\section{Mini Task: CSV}
+\begin{lstlisting}[language=Python]
+import os, csv
+os.makedirs("data", exist_ok=True)
+csv_path = os.path.join("data","toy.csv")
+with open(csv_path,"w",newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["id","value"])
+    w.writerows([[1,10],[2,20],[3,35],[4,50]])
+
+data = np.genfromtxt(csv_path, delimiter=",", names=True)
+vals = data["value"]
+print("mean:", np.mean(vals), "| sum:", np.sum(vals))
+\end{lstlisting}
+
+\section*{Summary}
+\begin{itemize}
+  \item Arrays = vectors/matrices/tensors
+  \item Shapes, dtypes = structure of data
+  \item Indexing = select subsets
+  \item Reshape = flexible views; Copy = independence
+  \item Broadcasting = smart expansion
+  \item Vectorization = speed via array ops
+  \item Statistics + Linear Algebra = math backbone
+  \item Random numbers = reproducibility
+  \item CSV = dataset handling
+\end{itemize}
